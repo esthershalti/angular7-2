@@ -1,0 +1,94 @@
+<form [formGroup]="form" class="form-horizontal">
+
+  <div class="modal-header">
+    <h6 class="modal-title">{{ model.title }}</h6>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="title">נושא</label>
+          <input type="text" class="form-control form-control-sm" name="title" [(ngModel)]="model.title">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="fromDate">תאריך התחלה</label>
+          <div class="input-group input-group-sm">
+            <input class="form-control form-control-sm" placeholder="yyyy-mm-dd" name="fromDate"
+              [(ngModel)]="model.from" ngbDatepicker #fromDatePicker="ngbDatepicker" #c2="ngModel">
+            <div class="input-group-append">
+              <button class="btn btn-sm btn-outline-secondary calendar" (click)="fromDatePicker.toggle()" type="button">
+                <i class="fa fa-calendar"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <div class="form-group">
+            <ngb-timepicker class="tm-picker" [(ngModel)]="fromTime" name="fromTime" [spinners]="true"></ngb-timepicker>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="fromDate">תאריך סיום</label>
+          <div class="input-group input-group-sm">
+            <input class="form-control form-control-sm" placeholder="yyyy-mm-dd" name="toDate" [(ngModel)]="model.to"
+              ngbDatepicker #toDatePicker="ngbDatepicker" #c2="ngModel">
+            <div class="input-group-append">
+              <button class="btn btn-sm btn-outline-secondary calendar" (click)="toDatePicker.toggle()" type="button">
+                <i class="fa fa-calendar"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <div class="form-group">
+            <ngb-timepicker class="tm-picker" [(ngModel)]="toTime" name="toTime" [spinners]="true"></ngb-timepicker>
+          </div>
+        </div>
+      </div>
+      //
+      <div class="form-group">
+        <label for="fromDate">בחירת קטגוריה</label><br>
+
+        <select formControlName="category" [(ngModel)]="selectedCategory.CategoryName"
+          (change)="onSelectedCategory($event.target.value)">
+          <option *ngFor="let x of arrCategory">{{x.CategoryName}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <div *ngIf="viewBusiness">
+          <label for="fromDate">בחירת עסק</label><br>
+
+          <select formControlName="business" [(ngModel)]="selectedBusiness.BusinessName"
+            (change)="onSelectedBusiness($event.target.value)">
+            <option *ngFor="let x of arrBusiness">{{x.BusinessName}}</option>
+          </select>
+        </div>
+      </div>
+      //
+      <!-- <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="fromDate">Color</label>
+          <input [style.background]="model.color" [style.width.px]="'30'"
+            [cpPresetColors]="['#fff', '#000', '#2889e9', '#e920e9', '#fff500', 'rgb(236,64,64)']"
+            [formControlName="color"(colorPicker)]="model.color" />
+        </div>
+      </div> -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="save()">Save</button>
+    <button type="button" class="btn btn-light" (click)="modal.close()">Close</button>
+  </div>
+
+  <!-- <div class="form-group">
+    <input type="text" placeholder=":נושא" formControlName="subject" [(ngModel)]="newEvent.subject">*
+  </div> -->
+
+</form>

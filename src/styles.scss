@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~angular-notifier/styles/core.css";
+@import "~angular-notifier/styles/themes/theme-material.css";
+@import "~angular-notifier/styles/types/type-default.css";
+@import "~angular-notifier/styles/types/type-info.css";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+}
+
+pre.code {
+  font-size: 13px !important;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #444;
+  color: #eee;
+}
+
+.ngb-tp-input {
+  height: calc(1.8125rem + 2px);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+button{
+  &:active,&:focus{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.tm-picker{
+  fieldset{
+    margin-top: 1px;
+  }
+  .btn-link{
+    font-size: 10px;
+  }
+}
+
+.float-button{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#c62828;
+	color:#FFF !important;
+	border-radius:50px;
+	text-align:center;
+  box-shadow: 2px 2px 3px #555;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  z-index:10000;
+  &:hover{
+    background-color: #e53935;
+  }
+  >i{
+    margin-top:22px;
+  }
+}
+
+.form-group{
+  margin-bottom: 0;
+}
+
+.form-group label{
+  font-size: 13px;
+}
+
+.nav {
+  border-bottom: 1px solid #ddd;
+}
+.nav-link {
+  text-transform: uppercase;
+  color: #666;
+}
+.nav-link.active {
+  color: #2196f3;
+}
+
+.alert {
+  font-size: 13px;
+  padding: 5px 8px;
+}
+
+.event-template {
+  position: relative;
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  padding: 0 5px;
+  margin: 0;
+  text-align: left;
+  color: #fff;
+  border-left: 2px solid #fff;
+  b {
+    display: block;
+    background: #eee;
+    color: #333;
+    border: 1px solid #111;
+    border-radius: 10px;
+    font-family: consolas;
+    margin: 5px 0;
+    padding: 0 5px;
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+.github-me {
+  position: absolute;
+  left: auto;
+  right: 0;
+  z-index: 1000;
+}
